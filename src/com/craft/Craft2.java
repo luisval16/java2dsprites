@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class Craft2 extends Sprite{
     private int dx;
     private int dy;
-    private ArrayList missiles;
+    private ArrayList<Missile> missiles;
     
     public Craft2(int x, int y){
     super(x, y);
@@ -23,7 +23,7 @@ public class Craft2 extends Sprite{
     }
     
     private void initCraft(){
-    missiles = new ArrayList();
+    missiles = new ArrayList<>();
         loadImage("src/com/images/craft.png");
         getImageDimensions();
     }
@@ -31,6 +31,14 @@ public class Craft2 extends Sprite{
     public void move(){
     x += dx;
     y += dy;
+    
+        if (x<1) {
+            x=1;
+        }
+        
+        if (y<1) {
+            y=1;
+        }
     }
 
     public ArrayList getMissiles() {
